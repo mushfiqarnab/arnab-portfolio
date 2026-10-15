@@ -2,7 +2,7 @@
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover" />
   <title>M. Iftida Mushfiq Arnab — Applied ML, Computer Vision &amp; Software Engineering Portfolio</title>
   <meta name="description" content="Official academic and software engineering portfolio of M. Iftida Mushfiq Arnab, Computer Science graduate from BRAC University specializing in Applied Machine Learning, Computer Vision, and High-Throughput Software Engineering." />
   <!-- Open Graph / LinkedIn / WhatsApp / Discord / Slack -->
@@ -73,9 +73,28 @@
       --border-subtle: #1e293b;
       --accent-primary: #3b82f6;
     }
-    body {
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    html, body {
+      width: 100%;
+      max-width: 100vw;
       overflow-x: hidden;
+      -webkit-text-size-adjust: 100%;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+    img, svg, video, canvas {
+      max-width: 100%;
+      height: auto;
+    }
+    .break-anywhere {
+      overflow-wrap: anywhere;
+      word-break: break-word;
+    }
+    @supports (max-height: 90dvh) {
+      .modal-scroll-box {
+        max-height: 90dvh !important;
+      }
     }
     .bg-academic-grid {
       background-size: 32px 32px;
@@ -125,18 +144,19 @@
 <body class="bg-slate-50 text-slate-900 dark:bg-[#090D16] dark:text-slate-100 antialiased selection:bg-blue-600 selection:text-white transition-colors duration-200">
 
   <!-- Top Formal Announcement / Status Bar -->
-  <div class="bg-slate-900 text-slate-200 dark:bg-slate-950 border-b border-slate-800 text-xs py-2 px-4 no-print">
-    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
-      <div class="flex items-center gap-2">
-        <span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[11px] font-medium bg-emerald-500/15 text-emerald-300 border border-emerald-500/30">
-          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-          Available for Research &amp; Software Engineering Roles
+  <div class="bg-slate-900 text-slate-200 dark:bg-slate-950 border-b border-slate-800 text-xs py-2 px-3 sm:px-6 lg:px-8 no-print">
+    <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-center sm:justify-between gap-x-4 gap-y-1.5 text-center sm:text-left">
+      <div class="flex flex-wrap items-center justify-center sm:justify-start gap-2 min-w-0">
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] font-medium bg-emerald-500/15 text-emerald-300 border border-emerald-500/30 leading-tight">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse shrink-0"></span>
+          <span>Available for Research &amp; SWE Roles</span>
         </span>
-        <span class="hidden sm:inline text-slate-500">|</span>
-        <span class="hidden sm:inline text-slate-300 font-mono text-[11px]">B.Sc. in CSE, BRAC University (Thesis Defended · Oct 2026)</span>
+        <span class="hidden md:inline text-slate-500">|</span>
+        <span class="hidden md:inline text-slate-300 font-mono text-[11px]">B.Sc. in CSE, BRAC University (Thesis Defended · Oct 2026)</span>
       </div>
-      <div class="flex items-center gap-4 font-mono text-[11px]">
-        <span class="text-slate-400">Dhaka 1217, Bangladesh</span>
+      <div class="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 font-mono text-[10px] sm:text-[11px]">
+        <span class="text-slate-400">Dhaka 1217, BD</span>
+        <span class="text-slate-600">·</span>
         <a href="mailto:iftida88@gmail.com" class="text-blue-300 hover:text-white transition-colors">iftida88@gmail.com</a>
       </div>
     </div>
@@ -144,15 +164,15 @@
 
   <!-- Sticky Formal Navigation Header -->
   <header class="sticky top-0 z-40 bg-white/95 dark:bg-[#090D16]/95 backdrop-blur-md border-b border-slate-200/80 dark:border-slate-800/80 no-print">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-3">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 min-h-[4rem] py-2 flex items-center justify-between gap-2 sm:gap-3">
       <!-- Brand Identity -->
-      <a href="#top" class="flex items-center gap-3 group focus:outline-none shrink-0">
-        <div class="w-9 h-9 rounded-lg bg-slate-900 dark:bg-blue-600 text-white flex items-center justify-center font-mono font-bold text-sm tracking-tighter shadow-sm group-hover:bg-blue-700 transition-colors">
+      <a href="#top" class="flex items-center gap-2.5 sm:gap-3 group focus:outline-none min-w-0 flex-1 sm:flex-initial">
+        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-slate-900 dark:bg-blue-600 text-white flex items-center justify-center font-mono font-bold text-xs sm:text-sm tracking-tighter shadow-sm group-hover:bg-blue-700 transition-colors shrink-0">
           IMA
         </div>
-        <div>
-          <span class="block font-semibold text-sm tracking-tight text-slate-900 dark:text-white">M. Iftida Mushfiq Arnab</span>
-          <span class="block text-[11px] font-mono text-slate-500 dark:text-slate-400">Applied ML · CV · Systems</span>
+        <div class="min-w-0">
+          <span class="block font-semibold text-xs sm:text-sm tracking-tight text-slate-900 dark:text-white truncate">M. Iftida Mushfiq Arnab</span>
+          <span class="block text-[10px] sm:text-[11px] font-mono text-slate-500 dark:text-slate-400 truncate">Applied ML · CV · Systems</span>
         </div>
       </a>
 
@@ -252,13 +272,19 @@
         <button type="button" id="btn-print-cv-mobile" class="inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-700 text-xs font-medium text-slate-700 dark:text-slate-200">
           <span>Print / Save CV</span>
         </button>
+        <button type="button" id="btn-cmd-palette-mobile" class="inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-xs font-mono font-medium text-slate-700 dark:text-slate-200">
+          <span>Quick Search</span>
+        </button>
+        <button type="button" id="btn-open-customizer-mobile" class="inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg border border-amber-300/80 dark:border-amber-700/70 bg-amber-50/80 dark:bg-amber-950/40 text-xs font-mono font-medium text-amber-900 dark:text-amber-300">
+          <span>Edit Links / Info</span>
+        </button>
       </div>
     </div>
   </header>
 
   <!-- FORMAL ACADEMIC CV DOSSIER VIEW (Toggled via "Formal CV Mode") -->
-  <section id="formal-cv-dossier" class="hidden py-10 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
-    <div class="bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-xl shadow-lg p-6 sm:p-10 space-y-6">
+  <section id="formal-cv-dossier" class="hidden py-6 sm:py-10 px-3 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+    <div class="bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-700 rounded-xl shadow-lg p-4 sm:p-8 md:p-10 space-y-6 break-anywhere">
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b-2 border-slate-900 dark:border-slate-200 pb-5">
         <div class="space-y-1">
           <h1 class="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white tracking-tight">M. Iftida Mushfiq Arnab</h1>
@@ -406,7 +432,7 @@
         </div>
       </div>
 
-      <div class="pt-4 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between no-print">
+      <div class="pt-4 border-t border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-2.5 no-print">
         <button type="button" id="btn-return-portfolio" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-slate-900 dark:bg-blue-600 text-white text-xs font-medium">
           <span>Return to Interactive Portfolio View</span>
         </button>
@@ -435,20 +461,20 @@
               </span>
             </div>
 
-            <div class="space-y-3">
-              <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.12]">
+            <div class="space-y-2.5 sm:space-y-3">
+              <h1 class="text-2xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-[1.14]">
                 M. Iftida Mushfiq Arnab
               </h1>
-              <p class="text-base sm:text-lg font-medium text-blue-700 dark:text-blue-400">
+              <p class="text-sm sm:text-base lg:text-lg font-medium text-blue-700 dark:text-blue-400 leading-snug">
                 Applied Machine Learning · Computer Vision · High-Throughput Software Engineering
               </p>
             </div>
 
             <!-- Career Objective (Verbatim Grounded) -->
             <div class="p-5 sm:p-6 rounded-xl bg-white dark:bg-slate-900/90 border border-slate-200/90 dark:border-slate-800 shadow-sm space-y-3">
-              <div class="flex items-center justify-between">
-                <span class="text-[11px] font-mono uppercase tracking-wider font-semibold text-slate-400 dark:text-slate-500">Career Objective &amp; Executive Summary</span>
-                <span class="text-[11px] font-mono text-emerald-600 dark:text-emerald-400 font-medium">Thesis Defended · Oct 2026</span>
+              <div class="flex flex-wrap items-center justify-between gap-1.5">
+                <span class="text-[10px] sm:text-[11px] font-mono uppercase tracking-wider font-semibold text-slate-400 dark:text-slate-500">Career Objective &amp; Executive Summary</span>
+                <span class="text-[10px] sm:text-[11px] font-mono text-emerald-600 dark:text-emerald-400 font-medium">Thesis Defended · Oct 2026</span>
               </div>
               <p class="text-sm sm:text-base text-slate-700 dark:text-slate-300 leading-relaxed">
                 Computer Science graduate from <strong class="font-semibold text-slate-900 dark:text-white">BRAC University</strong> specializing in <strong class="font-semibold text-slate-900 dark:text-white">Applied Machine Learning</strong>, <strong class="font-semibold text-slate-900 dark:text-white">Computer Vision</strong>, and <strong class="font-semibold text-slate-900 dark:text-white">High-Throughput Software Engineering</strong>. Demonstrated expertise in architecting resilient backend systems (<span class="font-mono text-xs bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded">Node.js</span>, <span class="font-mono text-xs bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded">Next.js</span>, <span class="font-mono text-xs bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded">PostgreSQL</span>) and engineering lightweight, edge-friendly Deep Learning pipelines (<span class="font-mono text-xs bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded">PyTorch</span>, <span class="font-mono text-xs bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded">OpenCV</span>, <span class="font-mono text-xs bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded">MediaPipe</span>). Proven track record in multimodal data fusion, model debiasing, and real-time algorithmic optimization.
@@ -456,26 +482,26 @@
             </div>
 
             <!-- Key Quantitative & Factual Highlights Grid -->
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
-              <div class="p-3.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
-                <span class="block text-xs font-mono text-slate-500 dark:text-slate-400">Thesis Leadership</span>
-                <span class="mt-1 block text-lg font-bold text-slate-900 dark:text-white">Engineering Lead</span>
-                <span class="block text-[11px] text-slate-500 dark:text-slate-400">3-Member BRACU Team</span>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3">
+              <div class="p-3 sm:p-3.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 min-w-0">
+                <span class="block text-[11px] sm:text-xs font-mono text-slate-500 dark:text-slate-400 truncate">Thesis Leadership</span>
+                <span class="mt-1 block text-sm sm:text-lg font-bold text-slate-900 dark:text-white leading-tight">Engineering Lead</span>
+                <span class="mt-0.5 block text-[10px] sm:text-[11px] text-slate-500 dark:text-slate-400">3-Member BRACU Team</span>
               </div>
-              <div class="p-3.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
-                <span class="block text-xs font-mono text-slate-500 dark:text-slate-400">rPPG Cohort</span>
-                <span class="mt-1 block text-lg font-bold text-slate-900 dark:text-white">56 Subjects</span>
-                <span class="block text-[11px] text-slate-500 dark:text-slate-400">UBFC-Phys Dataset</span>
+              <div class="p-3 sm:p-3.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 min-w-0">
+                <span class="block text-[11px] sm:text-xs font-mono text-slate-500 dark:text-slate-400 truncate">rPPG Cohort</span>
+                <span class="mt-1 block text-sm sm:text-lg font-bold text-slate-900 dark:text-white leading-tight">56 Subjects</span>
+                <span class="mt-0.5 block text-[10px] sm:text-[11px] text-slate-500 dark:text-slate-400">UBFC-Phys Dataset</span>
               </div>
-              <div class="p-3.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
-                <span class="block text-xs font-mono text-slate-500 dark:text-slate-400">Core Systems</span>
-                <span class="mt-1 block text-lg font-bold text-slate-900 dark:text-white">4 Engineered</span>
-                <span class="block text-[11px] text-slate-500 dark:text-slate-400">FinTech, Health, AI, API</span>
+              <div class="p-3 sm:p-3.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 min-w-0">
+                <span class="block text-[11px] sm:text-xs font-mono text-slate-500 dark:text-slate-400 truncate">Core Systems</span>
+                <span class="mt-1 block text-sm sm:text-lg font-bold text-slate-900 dark:text-white leading-tight">4 Engineered</span>
+                <span class="mt-0.5 block text-[10px] sm:text-[11px] text-slate-500 dark:text-slate-400">FinTech, Health, AI, API</span>
               </div>
-              <div class="p-3.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800">
-                <span class="block text-xs font-mono text-slate-500 dark:text-slate-400">Board Merits</span>
-                <span class="mt-1 block text-lg font-bold text-slate-900 dark:text-white">5.00 / 5.00</span>
-                <span class="block text-[11px] text-slate-500 dark:text-slate-400">HSC &amp; SSC Scholarships</span>
+              <div class="p-3 sm:p-3.5 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 min-w-0">
+                <span class="block text-[11px] sm:text-xs font-mono text-slate-500 dark:text-slate-400 truncate">Board Merits</span>
+                <span class="mt-1 block text-sm sm:text-lg font-bold text-slate-900 dark:text-white leading-tight">5.00 / 5.00</span>
+                <span class="mt-0.5 block text-[10px] sm:text-[11px] text-slate-500 dark:text-slate-400">HSC &amp; SSC Scholarships</span>
               </div>
             </div>
 
@@ -683,16 +709,16 @@
                 </li>
               </ul>
 
-              <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/80 dark:border-slate-700/70 space-y-2">
+              <div class="p-3.5 sm:p-4 rounded-xl bg-slate-50 dark:bg-slate-800/50 border border-slate-200/80 dark:border-slate-700/70 space-y-2">
                 <span class="block font-mono text-[11px] uppercase tracking-wider text-slate-500 dark:text-slate-400 font-semibold">Signal Processing Workflow</span>
-                <div class="grid grid-cols-3 gap-2 text-center font-mono text-[11px]">
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 text-center font-mono text-[11px]">
                   <div class="p-2 rounded bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700">
                     <span class="block font-bold text-slate-800 dark:text-slate-200">1. Video ROI</span>
                     <span class="text-[10px] text-slate-500">56-Subject Streams</span>
                   </div>
                   <div class="p-2 rounded bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700">
                     <span class="block font-bold text-slate-800 dark:text-slate-200">2. Landmarks</span>
-                    <span class="text-[10px] text-slate-500">Skin Reflectance</span>
+                    <span class="text-[10px] sm:text-[10px] text-slate-500">Skin Reflectance</span>
                   </div>
                   <div class="p-2 rounded bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700">
                     <span class="block font-bold text-slate-800 dark:text-slate-200">3. Pulse Est.</span>
@@ -791,14 +817,14 @@
               </ul>
             </div>
 
-            <div class="mt-6 pt-4 border-t border-slate-200/70 dark:border-slate-800 flex items-center justify-between gap-2 no-print">
+            <div class="mt-6 pt-4 border-t border-slate-200/70 dark:border-slate-800 flex flex-wrap items-center justify-between gap-2.5 no-print">
               <div class="flex flex-wrap gap-1.5">
                 <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300">Node.js</span>
                 <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300">Express</span>
                 <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300">MongoDB</span>
                 <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300">Passkeys</span>
               </div>
-              <div class="flex items-center gap-2 shrink-0">
+              <div class="flex flex-wrap items-center gap-2">
                 <button type="button" data-edit-field="buildBdRepoUrl" class="customizable-slot px-2 py-1 rounded border border-dashed border-slate-300 dark:border-slate-700 text-[11px] font-mono text-slate-600 dark:text-slate-400 hover:border-blue-500 hover:text-blue-600 transition-colors" title="Add GitHub Repository URL">
                   <span id="slot-text-buildBdRepoUrl">+ Repo</span>
                 </button>
@@ -848,14 +874,14 @@
               </ul>
             </div>
 
-            <div class="mt-6 pt-4 border-t border-slate-200/70 dark:border-slate-800 flex items-center justify-between gap-2 no-print">
+            <div class="mt-6 pt-4 border-t border-slate-200/70 dark:border-slate-800 flex flex-wrap items-center justify-between gap-2.5 no-print">
               <div class="flex flex-wrap gap-1.5">
                 <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300">React Native</span>
                 <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300">TypeScript</span>
                 <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300">Web Crypto API</span>
                 <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300">AES-GCM</span>
               </div>
-              <div class="flex items-center gap-2 shrink-0">
+              <div class="flex flex-wrap items-center gap-2">
                 <button type="button" data-edit-field="korHealthRepoUrl" class="customizable-slot px-2 py-1 rounded border border-dashed border-slate-300 dark:border-slate-700 text-[11px] font-mono text-slate-600 dark:text-slate-400 hover:border-blue-500 hover:text-blue-600 transition-colors" title="Add GitHub Repository URL">
                   <span id="slot-text-korHealthRepoUrl">+ Repo</span>
                 </button>
@@ -905,13 +931,13 @@
               </ul>
             </div>
 
-            <div class="mt-6 pt-4 border-t border-slate-200/70 dark:border-slate-800 flex items-center justify-between gap-2 no-print">
+            <div class="mt-6 pt-4 border-t border-slate-200/70 dark:border-slate-800 flex flex-wrap items-center justify-between gap-2.5 no-print">
               <div class="flex flex-wrap gap-1.5">
                 <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300">Next.js (App Router)</span>
                 <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300">TypeScript</span>
                 <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300">Supabase</span>
               </div>
-              <div class="flex items-center gap-2 shrink-0">
+              <div class="flex flex-wrap items-center gap-2">
                 <button type="button" data-edit-field="superAppRepoUrl" class="customizable-slot px-2 py-1 rounded border border-dashed border-slate-300 dark:border-slate-700 text-[11px] font-mono text-slate-600 dark:text-slate-400 hover:border-blue-500 hover:text-blue-600 transition-colors" title="Add GitHub Repository URL">
                   <span id="slot-text-superAppRepoUrl">+ Repo</span>
                 </button>
@@ -961,14 +987,14 @@
               </ul>
             </div>
 
-            <div class="mt-6 pt-4 border-t border-slate-200/70 dark:border-slate-800 flex items-center justify-between gap-2 no-print">
+            <div class="mt-6 pt-4 border-t border-slate-200/70 dark:border-slate-800 flex flex-wrap items-center justify-between gap-2.5 no-print">
               <div class="flex flex-wrap gap-1.5">
                 <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300">Node.js</span>
                 <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300">Express</span>
                 <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300">Mongoose</span>
                 <span class="px-2 py-0.5 rounded text-[11px] font-mono bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300">JWT</span>
               </div>
-              <div class="flex items-center gap-2 shrink-0">
+              <div class="flex flex-wrap items-center gap-2">
                 <button type="button" data-edit-field="tripmateRepoUrl" class="customizable-slot px-2 py-1 rounded border border-dashed border-slate-300 dark:border-slate-700 text-[11px] font-mono text-slate-600 dark:text-slate-400 hover:border-blue-500 hover:text-blue-600 transition-colors" title="Add GitHub Repository URL">
                   <span id="slot-text-tripmateRepoUrl">+ Repo</span>
                 </button>
@@ -1022,7 +1048,7 @@
         </div>
 
         <!-- 4 Pillars Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           
           <!-- Pillar 1: Languages -->
           <div class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 p-6 shadow-sm flex flex-col justify-between print-break-inside-avoid">
@@ -1032,13 +1058,13 @@
                 <span class="text-xs font-mono text-slate-400">7</span>
               </div>
               <div class="flex flex-wrap gap-2">
-                <button type="button" data-skill="Python" class="skill-chip px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">Python</button>
-                <button type="button" data-skill="C/C++" class="skill-chip px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">C/C++</button>
-                <button type="button" data-skill="JavaScript (ES6+)" class="skill-chip px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">JavaScript (ES6+)</button>
-                <button type="button" data-skill="TypeScript" class="skill-chip px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">TypeScript</button>
-                <button type="button" data-skill="SQL (PostgreSQL)" class="skill-chip px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">SQL (PostgreSQL)</button>
-                <button type="button" data-skill="HTML5" class="skill-chip px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">HTML5</button>
-                <button type="button" data-skill="CSS3" class="skill-chip px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">CSS3</button>
+                <button type="button" data-skill="Python" class="skill-chip text-left break-words max-w-full px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">Python</button>
+                <button type="button" data-skill="C/C++" class="skill-chip text-left break-words max-w-full px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">C/C++</button>
+                <button type="button" data-skill="JavaScript (ES6+)" class="skill-chip text-left break-words max-w-full px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">JavaScript (ES6+)</button>
+                <button type="button" data-skill="TypeScript" class="skill-chip text-left break-words max-w-full px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">TypeScript</button>
+                <button type="button" data-skill="SQL (PostgreSQL)" class="skill-chip text-left break-words max-w-full px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">SQL (PostgreSQL)</button>
+                <button type="button" data-skill="HTML5" class="skill-chip text-left break-words max-w-full px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">HTML5</button>
+                <button type="button" data-skill="CSS3" class="skill-chip text-left break-words max-w-full px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">CSS3</button>
               </div>
             </div>
             <p class="mt-6 pt-3 border-t border-slate-100 dark:border-slate-800 text-[11px] text-slate-500 dark:text-slate-400">
@@ -1054,17 +1080,17 @@
                 <span class="text-xs font-mono text-slate-400">11</span>
               </div>
               <div class="flex flex-wrap gap-2">
-                <button type="button" data-skill="PyTorch" class="skill-chip px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">PyTorch</button>
-                <button type="button" data-skill="OpenCV" class="skill-chip px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">OpenCV</button>
-                <button type="button" data-skill="MediaPipe" class="skill-chip px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">MediaPipe</button>
-                <button type="button" data-skill="scikit-learn" class="skill-chip px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">scikit-learn</button>
-                <button type="button" data-skill="NumPy" class="skill-chip px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">NumPy</button>
-                <button type="button" data-skill="Pandas" class="skill-chip px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">Pandas</button>
-                <button type="button" data-skill="Node.js" class="skill-chip px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">Node.js</button>
-                <button type="button" data-skill="Express.js" class="skill-chip px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">Express.js</button>
-                <button type="button" data-skill="React" class="skill-chip px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">React</button>
-                <button type="button" data-skill="React Native" class="skill-chip px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">React Native</button>
-                <button type="button" data-skill="Next.js (App Router)" class="skill-chip px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">Next.js (App Router)</button>
+                <button type="button" data-skill="PyTorch" class="skill-chip text-left break-words max-w-full px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">PyTorch</button>
+                <button type="button" data-skill="OpenCV" class="skill-chip text-left break-words max-w-full px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">OpenCV</button>
+                <button type="button" data-skill="MediaPipe" class="skill-chip text-left break-words max-w-full px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">MediaPipe</button>
+                <button type="button" data-skill="scikit-learn" class="skill-chip text-left break-words max-w-full px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">scikit-learn</button>
+                <button type="button" data-skill="NumPy" class="skill-chip text-left break-words max-w-full px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">NumPy</button>
+                <button type="button" data-skill="Pandas" class="skill-chip text-left break-words max-w-full px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">Pandas</button>
+                <button type="button" data-skill="Node.js" class="skill-chip text-left break-words max-w-full px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">Node.js</button>
+                <button type="button" data-skill="Express.js" class="skill-chip text-left break-words max-w-full px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">Express.js</button>
+                <button type="button" data-skill="React" class="skill-chip text-left break-words max-w-full px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">React</button>
+                <button type="button" data-skill="React Native" class="skill-chip text-left break-words max-w-full px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">React Native</button>
+                <button type="button" data-skill="Next.js (App Router)" class="skill-chip text-left break-words max-w-full px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">Next.js (App Router)</button>
               </div>
             </div>
             <p class="mt-6 pt-3 border-t border-slate-100 dark:border-slate-800 text-[11px] text-slate-500 dark:text-slate-400">
@@ -1080,15 +1106,15 @@
                 <span class="text-xs font-mono text-slate-400">9</span>
               </div>
               <div class="flex flex-wrap gap-2">
-                <button type="button" data-skill="Docker" class="skill-chip px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">Docker</button>
-                <button type="button" data-skill="Kubernetes" class="skill-chip px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">Kubernetes</button>
-                <button type="button" data-skill="MongoDB" class="skill-chip px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">MongoDB</button>
-                <button type="button" data-skill="PostgreSQL" class="skill-chip px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">PostgreSQL</button>
-                <button type="button" data-skill="Supabase" class="skill-chip px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">Supabase</button>
-                <button type="button" data-skill="Git" class="skill-chip px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">Git</button>
-                <button type="button" data-skill="GitHub Actions" class="skill-chip px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">GitHub Actions</button>
-                <button type="button" data-skill="CI/CD" class="skill-chip px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">CI/CD</button>
-                <button type="button" data-skill="Linux/Unix Shell" class="skill-chip px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">Linux/Unix Shell</button>
+                <button type="button" data-skill="Docker" class="skill-chip text-left break-words max-w-full px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">Docker</button>
+                <button type="button" data-skill="Kubernetes" class="skill-chip text-left break-words max-w-full px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">Kubernetes</button>
+                <button type="button" data-skill="MongoDB" class="skill-chip text-left break-words max-w-full px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">MongoDB</button>
+                <button type="button" data-skill="PostgreSQL" class="skill-chip text-left break-words max-w-full px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">PostgreSQL</button>
+                <button type="button" data-skill="Supabase" class="skill-chip text-left break-words max-w-full px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">Supabase</button>
+                <button type="button" data-skill="Git" class="skill-chip text-left break-words max-w-full px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">Git</button>
+                <button type="button" data-skill="GitHub Actions" class="skill-chip text-left break-words max-w-full px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">GitHub Actions</button>
+                <button type="button" data-skill="CI/CD" class="skill-chip text-left break-words max-w-full px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">CI/CD</button>
+                <button type="button" data-skill="Linux/Unix Shell" class="skill-chip text-left break-words max-w-full px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">Linux/Unix Shell</button>
               </div>
             </div>
             <p class="mt-6 pt-3 border-t border-slate-100 dark:border-slate-800 text-[11px] text-slate-500 dark:text-slate-400">
@@ -1104,13 +1130,13 @@
                 <span class="text-xs font-mono text-slate-400">7</span>
               </div>
               <div class="flex flex-wrap gap-2">
-                <button type="button" data-skill="Computer Vision" class="skill-chip px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">Computer Vision</button>
-                <button type="button" data-skill="Remote Photoplethysmography (rPPG)" class="skill-chip px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">Remote Photoplethysmography (rPPG)</button>
-                <button type="button" data-skill="Multimodal Data Fusion" class="skill-chip px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">Multimodal Data Fusion</button>
-                <button type="button" data-skill="Orthogonal-Subspace Debiasing" class="skill-chip px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">Orthogonal-Subspace Debiasing</button>
-                <button type="button" data-skill="Edge AI Acceleration" class="skill-chip px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">Edge AI Acceleration</button>
-                <button type="button" data-skill="RESTful Microservices" class="skill-chip px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">RESTful Microservices</button>
-                <button type="button" data-skill="Cryptographic Systems (AES-GCM)" class="skill-chip px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">Cryptographic Systems (AES-GCM)</button>
+                <button type="button" data-skill="Computer Vision" class="skill-chip text-left break-words max-w-full px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">Computer Vision</button>
+                <button type="button" data-skill="Remote Photoplethysmography (rPPG)" class="skill-chip text-left break-words max-w-full px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">Remote Photoplethysmography (rPPG)</button>
+                <button type="button" data-skill="Multimodal Data Fusion" class="skill-chip text-left break-words max-w-full px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">Multimodal Data Fusion</button>
+                <button type="button" data-skill="Orthogonal-Subspace Debiasing" class="skill-chip text-left break-words max-w-full px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">Orthogonal-Subspace Debiasing</button>
+                <button type="button" data-skill="Edge AI Acceleration" class="skill-chip text-left break-words max-w-full px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">Edge AI Acceleration</button>
+                <button type="button" data-skill="RESTful Microservices" class="skill-chip text-left break-words max-w-full px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">RESTful Microservices</button>
+                <button type="button" data-skill="Cryptographic Systems (AES-GCM)" class="skill-chip text-left break-words max-w-full px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors">Cryptographic Systems (AES-GCM)</button>
               </div>
             </div>
             <p class="mt-6 pt-3 border-t border-slate-100 dark:border-slate-800 text-[11px] text-slate-500 dark:text-slate-400">
@@ -1380,8 +1406,8 @@
                 </div>
               </div>
 
-              <div class="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between gap-2">
-                <a href="mailto:mostakim@bracu.ac.bd" class="font-mono text-xs text-blue-700 dark:text-blue-400 hover:underline">
+              <div class="pt-3 border-t border-slate-100 dark:border-slate-800 flex flex-wrap items-center justify-between gap-2 min-w-0">
+                <a href="mailto:mostakim@bracu.ac.bd" class="font-mono text-xs text-blue-700 dark:text-blue-400 hover:underline break-anywhere">
                   mostakim@bracu.ac.bd
                 </a>
                 <button type="button" data-copy="mostakim@bracu.ac.bd" data-label="Supervisor email (mostakim@bracu.ac.bd)" class="copy-trigger no-print inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-xs font-mono text-slate-700 dark:text-slate-300 transition-colors">
@@ -1406,8 +1432,8 @@
                 </div>
               </div>
 
-              <div class="pt-3 border-t border-slate-100 dark:border-slate-800 flex items-center justify-between gap-2">
-                <a href="mailto:rahman.rafeed@bracu.ac.bd" class="font-mono text-xs text-blue-700 dark:text-blue-400 hover:underline">
+              <div class="pt-3 border-t border-slate-100 dark:border-slate-800 flex flex-wrap items-center justify-between gap-2 min-w-0">
+                <a href="mailto:rahman.rafeed@bracu.ac.bd" class="font-mono text-xs text-blue-700 dark:text-blue-400 hover:underline break-anywhere">
                   rahman.rafeed@bracu.ac.bd
                 </a>
                 <button type="button" data-copy="rahman.rafeed@bracu.ac.bd" data-label="Co-supervisor email (rahman.rafeed@bracu.ac.bd)" class="copy-trigger no-print inline-flex items-center gap-1 px-2.5 py-1 rounded-md bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-xs font-mono text-slate-700 dark:text-slate-300 transition-colors">
@@ -1441,7 +1467,7 @@
 
             <div class="space-y-3">
               <!-- Email Card -->
-              <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-between gap-3">
+              <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-wrap items-center justify-between gap-2.5 min-w-0">
                 <div>
                   <span class="block text-[11px] font-mono uppercase text-slate-400">Electronic Mail</span>
                   <a href="mailto:iftida88@gmail.com" class="text-sm font-mono font-semibold text-slate-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400">
@@ -1454,7 +1480,7 @@
               </div>
 
               <!-- Phone Card -->
-              <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-between gap-3">
+              <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-wrap items-center justify-between gap-2.5 min-w-0">
                 <div>
                   <span class="block text-[11px] font-mono uppercase text-slate-400">Telephone / WhatsApp</span>
                   <a href="tel:+8801781405062" class="text-sm font-mono font-semibold text-slate-900 dark:text-white hover:text-blue-600 dark:hover:text-blue-400">
@@ -1467,7 +1493,7 @@
               </div>
 
               <!-- Location Card -->
-              <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-between gap-3">
+              <div class="p-4 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex flex-wrap items-center justify-between gap-2.5 min-w-0">
                 <div>
                   <span class="block text-[11px] font-mono uppercase text-slate-400">Location</span>
                   <span class="text-sm font-medium text-slate-900 dark:text-white">Dhaka 1217, Bangladesh</span>
@@ -1563,7 +1589,7 @@
 
   <!-- ARCHITECTURE / SPECIFICATION MODAL -->
   <div id="detail-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-slate-950/75 backdrop-blur-sm no-print">
-    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl max-w-2xl w-full max-h-[88vh] overflow-y-auto shadow-2xl p-6 sm:p-8 space-y-6">
+    <div class="modal-scroll-box bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl max-w-2xl w-full max-h-[88vh] overflow-y-auto shadow-2xl p-4 sm:p-6 md:p-8 space-y-5 sm:space-y-6">
       <div class="flex items-start justify-between gap-4 border-b border-slate-200 dark:border-slate-800 pb-4">
         <div>
           <span id="modal-badge" class="inline-block px-2.5 py-0.5 rounded text-xs font-mono font-semibold bg-blue-50 dark:bg-blue-950 text-blue-700 dark:text-blue-300 mb-1">
@@ -1605,7 +1631,7 @@
 
   <!-- PORTFOLIO CUSTOMIZATION STUDIO MODAL (Fill Missing Info & Export HTML) -->
   <div id="customizer-modal" role="dialog" aria-modal="true" aria-labelledby="customizer-title" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-slate-950/75 backdrop-blur-sm no-print">
-    <div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl p-6 sm:p-8 space-y-6">
+    <div class="modal-scroll-box bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl p-4 sm:p-6 md:p-8 space-y-5 sm:space-y-6">
       <div class="flex items-start justify-between gap-4 border-b border-slate-200 dark:border-slate-800 pb-4">
         <div>
           <span class="inline-block px-2.5 py-0.5 rounded text-[11px] font-mono font-semibold bg-amber-100 dark:bg-amber-950 text-amber-800 dark:text-amber-300 mb-1">
@@ -2020,7 +2046,7 @@
 
       function resetSkills() {
         for (var i = 0; i < skillChips.length; i++) {
-          skillChips[i].className = 'skill-chip px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors';
+          skillChips[i].className = 'skill-chip text-left break-words max-w-full px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors';
         }
         if (evidenceTitle && evidenceDesc) {
           evidenceTitle.textContent = 'Interactive Competency Verification: All 34 CV Skills Indexed';
@@ -2035,8 +2061,8 @@
           for (var j = 0; j < skillChips.length; j++) {
             var active = skillChips[j] === this;
             skillChips[j].className = active
-              ? 'skill-chip px-2.5 py-1.5 rounded-lg text-xs font-mono font-semibold bg-blue-700 text-white shadow-sm ring-2 ring-blue-400 transition-colors'
-              : 'skill-chip px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors';
+              ? 'skill-chip text-left break-words max-w-full px-2.5 py-1.5 rounded-lg text-xs font-mono font-semibold bg-blue-700 text-white shadow-sm ring-2 ring-blue-400 transition-colors'
+              : 'skill-chip text-left break-words max-w-full px-2.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-blue-600 hover:text-white dark:hover:bg-blue-600 transition-colors';
           }
           if (evidenceTitle && evidenceDesc) {
             evidenceTitle.textContent = 'Verified Evidence · ' + skillName;
@@ -2382,10 +2408,20 @@
         });
       }
 
+      var btnOpenCustomizerMobile = document.getElementById('btn-open-customizer-mobile');
+      if (btnOpenCustomizerMobile) {
+        btnOpenCustomizerMobile.addEventListener('click', function () {
+          closeMobileMenu();
+          openCustomizer();
+        });
+      }
+
       if (btnExportHtml) {
         btnExportHtml.addEventListener('click', function () {
           saveCustomizerForm();
-          var docHtml = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+          var docHtml = '<' + '!DOCTYPE html>\n' + document.documentElement.outerHTML;
+          var cfgJson = JSON.stringify(window.PORTFOLIO_CONFIG, null, 2);
+          docHtml = docHtml.replace(/window\.PORTFOLIO_CONFIG\s*=\s*window\.PORTFOLIO_CONFIG\s*\|\|\s*\{[\s\S]*?\};/, 'window.PORTFOLIO_CONFIG = ' + cfgJson + ';');
           var blob = new Blob([docHtml], { type: 'text/html;charset=utf-8' });
           var url = URL.createObjectURL(blob);
           var a = document.createElement('a');
@@ -2394,67 +2430,109 @@
           document.body.appendChild(a);
           a.click();
           document.body.removeChild(a);
-          URL.revokeObjectURL(url);
-          showToast('Downloaded updated index.html');
+          setTimeout(function () { URL.revokeObjectURL(url); }, 1500);
+          showToast('Downloaded updated index.html with your info');
         });
       }
 
       renderCustomConfig();
 
-      // 12. Command Palette (Ctrl+K / Cmd+K)
+      // 12. COMMAND PALETTE / QUICK FIND (Ctrl+K / Cmd+K)
       var cmdModal = document.getElementById('cmd-palette-modal');
-      var btnCmd = document.getElementById('btn-cmd-palette');
+      var btnCmdPalette = document.getElementById('btn-cmd-palette');
       var btnCloseCmd = document.getElementById('btn-close-cmd');
       var cmdInput = document.getElementById('cmd-search-input');
       var cmdList = document.getElementById('cmd-results-list');
 
-      var cmdItems = [
-        { label: 'Overview & Career Objective', href: '#about' },
-        { label: 'Thesis & Research (EQUITAS-RCMF & rPPG)', href: '#research' },
-        { label: 'Engineered Software Systems (Projects)', href: '#projects' },
-        { label: 'Technical Skills Matrix (34 Skills)', href: '#skills' },
-        { label: 'Work Experience & Bootcamps', href: '#experience' },
-        { label: 'Education & Academic Supervision', href: '#education' },
-        { label: 'Contact & Formal Inquiry Composer', href: '#contact' }
+      var searchIndex = [
+        { title: 'EQUITAS-RCMF Undergraduate Thesis', category: 'Thesis & Research', keywords: 'pytorch opencv mediapipe orthogonal-subspace debiasing stress facial scar ieee brac university moin mostakim rafeed rahman', action: function () { openSpecModal('equitas'); } },
+        { title: 'Camera-Based Heart-Rate Estimation (rPPG)', category: 'Independent Research', keywords: 'ubfc-phys 56 subjects opencv landmark skin reflectance pulse ground-truth', action: function () { openSpecModal('rppg'); } },
+        { title: 'Build BD Marketplace (2024)', category: 'Engineering Project', keywords: 'nodejs express mongodb passkeys b2b fintech escrow ledger idempotency dispute', action: function () { openSpecModal('build-bd'); } },
+        { title: 'KOR Health (2024)', category: 'Engineering Project', keywords: 'react native typescript web crypto api zero-knowledge aes-gcm envelope encryption expo securestore offline', action: function () { openSpecModal('kor-health'); } },
+        { title: 'Super App Platform (2023)', category: 'Engineering Project', keywords: 'nextjs app router typescript supabase tailwind counseling mentorship ai triagebot', action: function () { openSpecModal('super-app'); } },
+        { title: 'Tripmate API (2023)', category: 'Engineering Project', keywords: 'nodejs express mongoose jwt microservice flights hotels rentals booking', action: function () { openSpecModal('tripmate-api'); } },
+        { title: 'Switch to Formal Academic CV Dossier Mode', category: 'View Action', keywords: 'cv resume print dossier formal academic', action: function () { setViewMode(!isFormalMode); } },
+        { title: 'Customize & Fill Missing Portfolio Info', category: 'Author Studio', keywords: 'edit links github scholar cgpa repo demo customize', action: function () { openCustomizer(); } },
+        { title: 'Copy IEEE Thesis Citation', category: 'Citation', keywords: 'cite ieee reference paper', action: function () { copyTextToClipboard('M. I. M. Arnab et al., "Edge-Friendly Debiasing for Scar-Mediated Threat Profiling Using Emotion–Physiology Fusion," B.Sc. Thesis, Dept. of CSE, BRAC University, Dhaka, Bangladesh, Oct. 2026.', 'IEEE Thesis Citation'); } },
+        { title: 'Copy Direct Email (iftida88@gmail.com)', category: 'Contact', keywords: 'email mail contact hire', action: function () { copyTextToClipboard('iftida88@gmail.com', 'Email address'); } }
       ];
 
-      function renderCmdItems(q) {
+      function renderCmdResults(query) {
         if (!cmdList) return;
-        var query = (q || '').toLowerCase();
-        var html = '';
-        for (var i = 0; i < cmdItems.length; i++) {
-          if (!query || cmdItems[i].label.toLowerCase().indexOf(query) !== -1) {
-            html += '<a href="' + cmdItems[i].href + '" class="cmd-item block px-3 py-2.5 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-700 dark:text-slate-200 font-medium">' + cmdItems[i].label + '</a>';
+        var q = (query || '').toLowerCase().trim();
+        var htmlItems = '';
+        for (var i = 0; i < searchIndex.length; i++) {
+          var item = searchIndex[i];
+          var hay = (item.title + ' ' + item.category + ' ' + item.keywords).toLowerCase();
+          if (!q || hay.indexOf(q) !== -1) {
+            htmlItems += '<button type="button" data-cmd-idx="' + i + '" class="cmd-item w-full text-left px-3 py-2.5 rounded-lg hover:bg-blue-50 dark:hover:bg-slate-800 flex items-center justify-between gap-2 transition-colors">' +
+              '<span class="font-medium text-slate-900 dark:text-white">' + item.title + '</span>' +
+              '<span class="px-2 py-0.5 rounded text-[10px] font-mono bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 shrink-0">' + item.category + '</span>' +
+            '</button>';
           }
         }
-        cmdList.innerHTML = html || '<div class="p-3 text-slate-400">No matching sections found.</div>';
-        var links = cmdList.querySelectorAll('.cmd-item');
-        for (var j = 0; j < links.length; j++) {
-          links[j].addEventListener('click', function () {
-            cmdModal.classList.add('hidden');
+        if (!htmlItems) {
+          htmlItems = '<div class="p-4 text-center text-slate-500">No matching research, project, or skill found.</div>';
+        }
+        cmdList.innerHTML = htmlItems;
+        var btns = cmdList.querySelectorAll('.cmd-item');
+        for (var b = 0; b < btns.length; b++) {
+          btns[b].addEventListener('click', function () {
+            var idx = parseInt(this.getAttribute('data-cmd-idx'), 10);
+            closeCmdPalette();
+            if (searchIndex[idx] && searchIndex[idx].action) {
+              searchIndex[idx].action();
+            }
           });
         }
       }
 
-      function openCmd() {
+      function openCmdPalette() {
         if (!cmdModal) return;
         cmdModal.classList.remove('hidden');
-        renderCmdItems('');
         if (cmdInput) {
           cmdInput.value = '';
+          renderCmdResults('');
           setTimeout(function () { cmdInput.focus(); }, 50);
         }
       }
 
-      if (btnCmd) btnCmd.addEventListener('click', openCmd);
-      if (btnCloseCmd) btnCloseCmd.addEventListener('click', function () { cmdModal.classList.add('hidden'); });
-      if (cmdInput) cmdInput.addEventListener('input', function () { renderCmdItems(this.value); });
+      function closeCmdPalette() {
+        if (cmdModal) cmdModal.classList.add('hidden');
+      }
+
+      if (btnCmdPalette) btnCmdPalette.addEventListener('click', openCmdPalette);
+      var btnCmdPaletteMobile = document.getElementById('btn-cmd-palette-mobile');
+      if (btnCmdPaletteMobile) {
+        btnCmdPaletteMobile.addEventListener('click', function () {
+          closeMobileMenu();
+          openCmdPalette();
+        });
+      }
+      if (btnCloseCmd) btnCloseCmd.addEventListener('click', closeCmdPalette);
+      if (cmdInput) {
+        cmdInput.addEventListener('input', function () {
+          renderCmdResults(this.value);
+        });
+      }
+      if (cmdModal) {
+        cmdModal.addEventListener('click', function (e) {
+          if (e.target === cmdModal) closeCmdPalette();
+        });
+      }
+      if (customizerModal) {
+        customizerModal.addEventListener('click', function (e) {
+          if (e.target === customizerModal) closeCustomizer();
+        });
+      }
+
       document.addEventListener('keydown', function (e) {
         if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
           e.preventDefault();
-          openCmd();
-        } else if (e.key === 'Escape' && cmdModal) {
-          cmdModal.classList.add('hidden');
+          openCmdPalette();
+        } else if (e.key === 'Escape') {
+          closeCmdPalette();
+          closeCustomizer();
         }
       });
     })();
